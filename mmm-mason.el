@@ -99,7 +99,7 @@ Saves the name of the tag matched.")
     :match-name "~1"
     :save-name 1
     :insert ((?, mason-<%TAG> "Perl section: " @ "<%" str ">" @
-                 ";\n" _ "\n" @ "</%" str ">" @)
+                 "\n" _ "\n" @ "</%" str ">" @)
              (?< mason-<%TAG> ?, . nil)
              (?p mason-<%perl> ?, . "perl")
              (?i mason-<%init> ?, . "init")
