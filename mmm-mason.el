@@ -39,7 +39,7 @@
 
 (defvar mmm-mason-perl-tags
   '("perl" "init" "cleanup" "once" "filter" "shared"
-    "perl_init" "perl_cleanup" "perl_once" "perl_filter"))
+    "perl_init" "perl_cleanup" "perl_once" "perl_filter" "shared_vars"))
 
 (defvar mmm-mason-pseudo-perl-tags
   '("args" "perl_args" "attr" "flags"))
@@ -91,7 +91,8 @@ Saves the name of the tag matched.")
                  ("<%cleanup>" . mmm-cleanup-submode-face)
                  ("<%once>" . mmm-init-submode-face)
                  ("<%filter>" . mmm-special-submode-face)
-                 ("<%shared>" . mmm-init-submode-face))
+                 ("<%shared>" . mmm-init-submode-face)
+                 ("<%shared_vars>" . mmm-init-submode-face))
     :front ,mmm-mason-perl-tags-regexp
     :back "</%~1>"
     :save-matches 1
@@ -105,7 +106,7 @@ Saves the name of the tag matched.")
              (?c mason-<%cleanup> ?, . "cleanup")
              (?o mason-<%once> ?, . "once")
              (?l mason-<%filter> ?, . "filter")
-             (?s mason-<%shared> ?, . "shared")))
+             (?s mason-<%shared_vars> ?, . "shared_vars")))
    (mason-pseudo-perl
     :submode perl
     :face mmm-declaration-submode-face
